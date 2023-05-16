@@ -9,7 +9,6 @@ import MuiAccordionSummary, {
 import { styled } from '@mui/material/styles';
 import { useState } from 'react';
 import { BiChevronLeft, BiPlus } from 'react-icons/bi';
-import { BsFillTabletLandscapeFill } from 'react-icons/bs';
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -24,7 +23,7 @@ const Accordion = styled((props: AccordionProps) => (
 
 const AccordionSummary = styled((props: AccordionSummaryProps) => (
   <MuiAccordionSummary
-    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
+    expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.8rem' }} />}
     {...props}
   />
 ))(({ theme }) => ({
@@ -32,11 +31,11 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
   fontWeight: "bold",
   flexDirection: 'row',
   '& .MuiAccordionSummary-expandIconWrapper.Mui-expanded': {
-    transform: 'rotate(90deg)',
+    transform: 'rotate(-90deg)',
   },
   '& .MuiAccordionSummary-expandIconWrapper': {
     color: "blue",
-    background: "rgb(96 165 250 / 1)",
+    background: "rgb(147 197 253 / 1)",
     padding: '5px',
     borderRadius: "100%"
   },
@@ -47,7 +46,7 @@ const AccordionSummary = styled((props: AccordionSummaryProps) => (
 }));
 
 const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-  padding: theme.spacing(4),
+  padding: theme.spacing(1),
   color: "#999"
 }));
 
@@ -75,16 +74,16 @@ const MiddleBar = () => {
             items.map((item, index) => (
               <Accordion key={index} className='my-2 border-b border-slate-300' expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
                 <AccordionSummary aria-controls={`panel${index}d-content`} id="panel1d-header">
-                  <Box className={`${expanded === ("panel" + index) ? "text-black" : "text-slate-700"} flex items-center`}>
-                    {item.icon && <item.icon className={`mr-2 `} size={25} />}
-                    <Typography className={`font-bold `}>{item.heading}</Typography>
+                  <Box className={`flex items-center`}>
+                    {item.icon && <item.icon color='grey' className={`mr-2 `} size={25} />}
+                    <Typography className={`font-bold ${expanded === ("panel" + index) ? "text-black" : "text-slate-700"} `}>{item.heading}</Typography>
                   </Box>
                 </AccordionSummary>
                 <AccordionDetails>
-                  <ol>
+                  <ol className='pl-10'>
                     {
                       item.subItems.map((subItem, index) => (
-                        <li onClick={() => setActiveSubItem("sub" + index)} className={`my-1 cursor-pointer ${activeSubItem === ("sub" + index) ? "text-black font-bold" : "text-slate-700"}`} key={index}>{subItem.name}</li>
+                        <li onClick={() => setActiveSubItem("sub" + index)} className={`my-2 py-1 cursor-pointer ${activeSubItem === ("sub" + index) ? "text-black font-bold" : "text-slate-700"}`} key={index}>{subItem.name}</li>
                       ))
                     }
                   </ol>
