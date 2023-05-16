@@ -44,9 +44,6 @@ export default {
     },
     colors: {
       ...colors,
-      "delete-red": "#d72222",
-      "blueish":"#115061",
-      "whitish":"#e3edf6"
     }
   },
   plugins: [],
