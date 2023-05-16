@@ -15,3 +15,10 @@ export interface IItem {
         nref?: string
     }[]
 }
+
+export interface ITask {
+    name: string
+    status: string
+    time: string
+    assignees: number[]
+}

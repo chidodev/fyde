@@ -13,7 +13,7 @@ const Navbar = () => {
           <span className='w-12  h-full bg-blue-700 flex rounded-full items-center justify-center text-white cursor-pointer'>
             <BiPause size={30} color='white' />
           </span>
-          <span className='ml-2 h-full flex items-center justify-center rounded-lg text-2xl px-4 bg-slate-200 text-black'>{(new Date()).getHours()}:{(new Date()).getMinutes()}</span>
+          <span className='ml-2 h-full flex items-center justify-center rounded-lg text-2xl px-4 bg-slate-200 text-black'>4: 26</span>
         </div>
         <div className='cursor-pointer mx-3 h-12 flex items-center'>
           <span className='w-12  h-full bg-green-600 flex rounded-full items-center justify-center text-white cursor-pointer'>
