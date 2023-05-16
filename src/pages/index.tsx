@@ -5,7 +5,7 @@ import { navigation, statistics, tasks, users } from '@/utils/data'
 import { Avatar, AvatarGroup, useRadioGroup } from '@mui/material'
 import Head from 'next/head'
 import { useState } from 'react'
-import { BiDotsHorizontal, BiDotsHorizontalRounded, BiPlus } from 'react-icons/bi'
+import { BiCheck, BiChevronRight, BiDotsHorizontal, BiDotsHorizontalRounded, BiPause, BiPlus } from 'react-icons/bi'
 import { BsListUl } from 'react-icons/bs'
 import { CgViewComfortable } from 'react-icons/cg'
 
@@ -21,7 +21,7 @@ export default function Home() {
         </Head>
         <Navbar />
         <div className='w-full flex justify-around'>
-          <div className='w-3/5 min-h-[calc(100vh_-_15vh)] mt-3 flex flex-col'>
+          <div className='w-4/6 min-h-[calc(100vh_-_15vh)] mt-3 flex flex-col'>
             <div className='flex items-center py-6 border-b border-slate-400'>
               {
                 navigation.map((navigation, index) => (
@@ -82,8 +82,39 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className='w-2/5 min-h-[calc(100vh_-_15vh)] mt-3  flex flex-col'>
-
+          <div className='w-2/5 p-4 min-h-[calc(100vh_-_15vh)] mt-3 flex flex-col'>
+            <div className='w-full flex my-4 justify-between items-center'>
+              <span className='font-bold text-xl'>Time Tracking</span>
+              <button className='text-blue-600 border-2 rounded-3xl cursor-pointer p-2 flex'>
+                <span>Hide Window</span>
+                <BiChevronRight size={20} />
+              </button>
+            </div>
+            <div className='w-full p-3 bg-slate-200 items-center rounded-xl flex flex-col'>
+              <div className='w-full flex'>
+                <div className='bg-yellow-600 text-white p-2 rounded'>
+                  TIMER IS ON
+                </div>
+              </div>
+              <span className='text-center text-slate-600'>Task: #78</span>
+              <span className='font-bold my-3 text-blue-900'>Create project with all tabs</span>
+              <span className='font-light text-xl'>01:34</span>
+              <div className='flex border p-2 border-slate-500 rounded-3xl items-center'>
+                <div className='cursor-pointer border rounded-xl mx-3 h-10 flex items-center'>
+                  <span className='w-10  h-full bg-blue-700 flex rounded-full items-center justify-center text-white cursor-pointer'>
+                    <BiPause size={30} color='white' />
+                  </span>
+                  <span className='ml-2 h-full flex items-center justify-center rounded-lg text-blue-700'>Pause</span>
+                </div>
+                <span className='text-2xl text-slate-600'>|</span>
+                <div className='cursor-pointer mx-3 h-10 flex flex-row-reverse items-center'>
+                  <span className='w-10  h-full bg-green-600 flex rounded-full items-center justify-center text-white cursor-pointer'>
+                    <BiCheck size={30} color='white' />
+                  </span>
+                  <span className='mr-2 h-full flex items-center justify-center rounded-lg text-green-700'>Complete</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </main>
