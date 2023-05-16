@@ -6,3 +6,12 @@ export interface INavbarLink {
     icon: IconType
     label: "home" | "tasks" | "user" | "chat" | "help"
 }
+
+export interface IItem {
+    icon?: IconType
+    heading: string,
+    subItems: {
+        name: string
+        nref?: string
+    }[]
+}
