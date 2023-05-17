@@ -46,7 +46,7 @@ export default function Home() {
                 ))
               }
             </div>
-            <div className='flex flex-col'>
+            <div className='flex w-full flex-col'>
               <div className='w-full my-3 flex items-center justify-between'>
                 <div className='flex items-center'>
                   <span className='text-2xl font-light'>Tasks List</span>
@@ -73,7 +73,7 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-full h-[52vh] overflow-y-scroll flex flex-col">
+              <div className="w-full px-3 h-[52vh] overflow-y-scroll flex flex-col">
                 {
                   tasks.map((task, index) => (
                     <Task task={task} key={index} />
