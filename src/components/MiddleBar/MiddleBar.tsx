@@ -61,7 +61,7 @@ const MiddleBar = () => {
 
   return (
     <div className='bg-blue-100 min-h-screen w-1/5  flex flex-col'>
-      <div className='w-full px-4 flex items-center pt-8 justify-between shadow shadow-slate-300 pb-4'>
+      <div className='w-full px-4 flex items-center pt-5 justify-between shadow shadow-slate-300 pb-4'>
         <div></div>
         <span className='font-bold text-2xl text-center'>Project CRM</span>
         <div className='w-10 h-10 cursor-pointer rounded-full flex items-center justify-center bg-blue-700'>

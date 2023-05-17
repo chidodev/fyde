@@ -1,6 +1,7 @@
 import CommonComponent from '@/components/Common/CommonComponent'
 import Navbar from '@/components/Navbar'
 import Task from '@/components/Task'
+import { useApp } from '@/context/AppContext'
 import { navigation, statistics, tasks, users } from '@/utils/data'
 import { Avatar, AvatarGroup, useRadioGroup } from '@mui/material'
 import Head from 'next/head'
@@ -12,7 +13,7 @@ import { CgViewComfortable } from 'react-icons/cg'
 export default function Home() {
 
   const [activeDisplayTab, setActiveDisplayTab] = useState("flex")
-
+  const { rightBar, setRightBar } = useApp()
   return (
     <CommonComponent>
       <main className="flex w-full flex-col p-10 min-h-screen">
@@ -21,16 +22,22 @@ export default function Home() {
         </Head>
         <Navbar />
         <div className='w-full flex justify-around'>
-          <div className='w-4/6 min-h-[calc(100vh_-_15vh)] mt-3 flex flex-col'>
-            <div className='flex items-center py-6 border-b border-slate-400'>
-              {
-                navigation.map((navigation, index) => (
-                  <div className={` mx-2 rounded-xl bg-slate-200 px-3 py-2 flex items-center justify-center`} key={index}>
-                    <navigation.icon size={20} className='text-blue-700 mr-3' />
-                    <span>{navigation.name}</span>
-                  </div>
-                ))
-              }
+          <div className={`${rightBar ? "w-4/6" : "w-11/12"} min-h-[calc(100vh_-_15vh)] mt-2 flex flex-col`}>
+            <div className='flex items-center justify-between py-6 border-b border-slate-400'>
+              <div className='w-fit flex items-center'>
+                {
+                  navigation.map((navigation, index) => (
+                    <div className={` mx-2 rounded-xl bg-slate-200 px-3 py-2 flex items-center justify-center`} key={index}>
+                      <navigation.icon size={20} className='text-blue-700 mr-3' />
+                      <span>{navigation.name}</span>
+                    </div>
+                  ))
+                }
+              </div>
+              {!rightBar && <button onClick={() => setRightBar(true)} className='text-blue-600 border-2 rounded-3xl cursor-pointer p-2 flex'>
+                <span>Show Window</span>
+                <BiChevronRight size={20} />
+              </button>}
             </div>
             <div className='flex w-full justify-between items-center py-4'>
               {
@@ -47,7 +54,7 @@ export default function Home() {
               }
             </div>
             <div className='flex w-full flex-col'>
-              <div className='w-full my-3 flex items-center justify-between'>
+              <div className='w-full my-2 flex items-center justify-between'>
                 <div className='flex items-center'>
                   <span className='text-2xl font-light'>Tasks List</span>
                   <span className='cursor-pointer mx-6 bg-blue-700 rounded-full p-3 text-white'>
@@ -73,19 +80,29 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="w-full px-3 h-[52vh] overflow-y-scroll flex flex-col">
-                {
-                  tasks.map((task, index) => (
-                    <Task task={task} key={index} />
-                  ))
-                }
+              <div className='flex flex-col'>
+                <div className="w-full p-3 mb-2 h-[45vh] border-b-2 overflow-y-scroll flex justify-between flex-col">
+                  {
+                    tasks.map((task, index) => (
+                      <Task task={task} key={index} />
+                    ))
+                  }
+                </div>
+                <div className='w-full flex items-center '>
+                  <Task task={{
+                    assignees: [1, 2],
+                    name: "Adaptation view for admin panel",
+                    status: "done",
+                    time: "01: 23"
+                  }} />
+                </div>
               </div>
             </div>
           </div>
-          <div className='w-2/5 p-4 min-h-[calc(100vh_-_15vh)] mt-3 flex flex-col'>
+          {rightBar && <div className='w-2/5 p-4 min-h-[calc(100vh_-_15vh)] mt-3 flex flex-col'>
             <div className='w-full flex my-4 justify-between items-center'>
               <span className='font-bold text-xl'>Time Tracking</span>
-              <button className='text-blue-600 border-2 rounded-3xl cursor-pointer p-2 flex'>
+              <button onClick={() => setRightBar(false)} className='text-blue-600 border-2 rounded-3xl cursor-pointer p-2 flex'>
                 <span>Hide Window</span>
                 <BiChevronRight size={20} />
               </button>
@@ -115,7 +132,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </div>
+          </div>}
         </div>
       </main>
     </CommonComponent>

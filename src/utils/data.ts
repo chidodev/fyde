@@ -186,6 +186,7 @@ export const users = [
 
 export const tasks: ITask[] = [
     {
+        id: 1,
         name: "Request Server username and password",
         status: "progressing",
         time: "02:54",
@@ -194,6 +195,7 @@ export const tasks: ITask[] = [
         ]
     },
     {
+        id: 2,
         name: "Change color pallette to more bright",
         status: "onhold",
         time: "00:00",
@@ -202,6 +204,7 @@ export const tasks: ITask[] = [
         ]
     },
     {
+        id: 3,
         name: "Create project page with all tabs",
         status: "progressing",
         time: "01:34",
@@ -210,6 +213,7 @@ export const tasks: ITask[] = [
         ]
     },
     {
+        id: 4,
         name: "Make unique page for customer",
         status: "progressing",
         time: "00:16",
@@ -218,6 +222,7 @@ export const tasks: ITask[] = [
         ]
     },
     {
+        id: 5,
         name: "Design system",
         status: "todo",
         time: "00:00",
@@ -226,6 +231,7 @@ export const tasks: ITask[] = [
         ]
     },
     {
+        id: 6,
         name: "Make fixes in homepage",
         status: "todo",
         time: "00:00",

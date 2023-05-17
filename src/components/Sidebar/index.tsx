@@ -10,7 +10,9 @@ const Sidebar = () => {
 
   return (
     <div className='w-20 items-center bg-white flex flex-col py-3 justify-between shadow min-h-screen'>
-      <Image alt='Logo' src={"/logo.png"} width={60} height={60} />
+      <div className='border-b-2 w-full'>
+        <Image alt='Logo' src={"/logo.png"} className='m-auto' width={60} height={60} />
+      </div>
       <div className='flex w-full items-center flex-col'>
         {
           navbarLinks.map((link: INavbarLink, index: number) => (

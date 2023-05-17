@@ -17,6 +17,7 @@ export interface IItem {
 }
 
 export interface ITask {
+    id?: number
     name: string
     status: string
     time: string
