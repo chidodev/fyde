@@ -138,7 +138,7 @@ export const statistics = [
     {
         name: "Yours & total time",
         label: "h",
-        labelColor: "green-600",
+        labelColor: "yellow-600",
         value: "03:09",
         subValue: "05:21"
     }, {
@@ -150,7 +150,7 @@ export const statistics = [
     }, {
         name: "Project Progress",
         label: "%",
-        labelColor: "green-600",
+        labelColor: "blue-700",
         value: "34%",
         subValue: "34/100"
     },

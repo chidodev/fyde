@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import React from 'react'
 import { BiCheck, BiChevronDown, BiPause, BiSearch } from 'react-icons/bi'
 
@@ -28,7 +29,7 @@ const Navbar = () => {
           </div>
         </div>
         <div className='mx-3 cursor-pointer h-12 flex items-center'>
-          <img className='w-12 h-full flex rounded-full items-center justify-center text-white cursor-pointer' src='https://picsum.photos/250/250' />
+          <Image alt="" width={48} height={48} className='w-12 h-full flex rounded-full items-center justify-center text-white cursor-pointer' src='https://picsum.photos/250/250' />
           <div className='mx-1 flex items-center'>
             <div className='flex flex-col'>
               <span>User</span>

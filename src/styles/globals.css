@@ -10,3 +10,9 @@
   transition: all 0.2s ease-in-out;
   font-family: "Open Sans";
 }
+
+.task-shadow {
+  -webkit-box-shadow: 6px 13px 300px -48px rgba(0, 0, 0, 0.74);
+  -moz-box-shadow: 6px 13px 300px -48px rgba(0, 0, 0, 0.74);
+  box-shadow: 6px 13px 300px -48px rgba(0, 0, 0, 0.74);
+}

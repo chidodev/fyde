@@ -5,10 +5,13 @@ import { useApp } from '@/context/AppContext'
 import { navigation, statistics, tasks, users } from '@/utils/data'
 import { Avatar, AvatarGroup, useRadioGroup } from '@mui/material'
 import Head from 'next/head'
+import Image from 'next/image'
+import Link from 'next/link'
 import { useState } from 'react'
-import { BiCheck, BiChevronRight, BiDotsHorizontal, BiDotsHorizontalRounded, BiPause, BiPlus } from 'react-icons/bi'
+import { BiCheck, BiChevronDown, BiChevronRight, BiDotsHorizontal, BiDotsHorizontalRounded, BiPause, BiPlus } from 'react-icons/bi'
 import { BsListUl } from 'react-icons/bs'
 import { CgViewComfortable } from 'react-icons/cg'
+import { TiAttachment } from 'react-icons/ti'
 
 export default function Home() {
 
@@ -16,7 +19,7 @@ export default function Home() {
   const { rightBar, setRightBar } = useApp()
   return (
     <CommonComponent>
-      <main className="flex w-full flex-col p-10 min-h-screen">
+      <main className="flex w-full flex-col px-8 py-4 min-h-screen">
         <Head>
           <title>Project CRM</title>
         </Head>
@@ -43,7 +46,7 @@ export default function Home() {
               {
                 statistics.map((data, index) => (
                   <div key={index} className='w-4/12 p-4 mx-2 rounded-2xl relative  bg-slate-100 flex flex-col items-start'>
-                    <span className={`bg-${data.labelColor} rounded p-1 h-6 w-6 flex items-center justify-center leading-[2px] text-white absolute right-1 top-1`}>{data.label}</span>
+                    <span className={`bg-${data.labelColor} rounded-lg p-1 h-6 w-6 flex items-center justify-center leading-[2px] text-white absolute right-1 top-1`}>{data.label}</span>
                     <span className='text-slate-500'>{data.name}</span>
                     <span className='flex my-3 justify-end items-end'>
                       <span className='text-2xl text-slate-900'>{data.value}</span>
@@ -69,7 +72,7 @@ export default function Home() {
                       }
                     </AvatarGroup>
                   </div>
-                  <span className='text-slate-500 mx-4'>200 items</span>
+                  <span className='text-slate-500 mx-4'>200 elements</span>
                 </div>
                 <div className='flex border-l border-slate-400 pl-4 items-center'>
                   <div className='flex mx-2 items-center '>
@@ -96,6 +99,7 @@ export default function Home() {
                     time: "01: 23"
                   }} />
                 </div>
+                <span className='text-slate-500 text-center mt-6 text-sm'>&copy; Ottundo, 2020 Do you <Link href="#" className='text-blue-700'>need help?</Link></span>
               </div>
             </div>
           </div>
@@ -109,7 +113,7 @@ export default function Home() {
             </div>
             <div className='w-full p-3 bg-slate-200 items-center rounded-xl flex flex-col'>
               <div className='w-full flex'>
-                <div className='bg-yellow-600 text-white p-2 rounded'>
+                <div className='bg-orange-400 text-white p-2 text-xs rounded-2xl'>
                   TIMER IS ON
                 </div>
               </div>
@@ -117,20 +121,65 @@ export default function Home() {
               <span className='font-bold my-3 text-blue-900'>Create project with all tabs</span>
               <span className='font-light text-xl'>01:34</span>
               <div className='flex border p-2 border-slate-500 rounded-3xl items-center'>
-                <div className='cursor-pointer border rounded-xl mx-3 h-10 flex items-center'>
-                  <span className='w-10  h-full bg-blue-700 flex rounded-full items-center justify-center text-white cursor-pointer'>
+                <div className='cursor-pointer border rounded-xl mx-3 h-8 flex items-center'>
+                  <span className='w-8  h-full bg-blue-700 flex rounded-full items-center justify-center text-white cursor-pointer'>
                     <BiPause size={30} color='white' />
                   </span>
                   <span className='ml-2 h-full flex items-center justify-center rounded-lg text-blue-700'>Pause</span>
                 </div>
                 <span className='text-2xl text-slate-600'>|</span>
-                <div className='cursor-pointer mx-3 h-10 flex flex-row-reverse items-center'>
-                  <span className='w-10  h-full bg-green-600 flex rounded-full items-center justify-center text-white cursor-pointer'>
+                <div className='cursor-pointer mx-3 h-8 flex flex-row-reverse items-center'>
+                  <span className='w-8  h-full bg-green-600 flex rounded-full items-center justify-center text-white cursor-pointer'>
                     <BiCheck size={30} color='white' />
                   </span>
                   <span className='mr-2 h-full flex items-center justify-center rounded-lg text-green-700'>Complete</span>
                 </div>
               </div>
+            </div>
+            <div className='w-full flex items-center my-4 border-b justify-between'>
+              <span className="font-bold text-lg text-blue-950">Task Description</span>
+              <span className={`bg-blue-100 z-[1] rounded-xl p-[6px] cursor-pointer `}>
+                <BiDotsHorizontalRounded size={25} />
+              </span>
+            </div>
+            <div className='flex p-2 w-full  justify-betweenrounded-3xl items-center'>
+              <div className='cursor-pointer rounded-xl mx-3 w-1/2 h-10 flex items-center'>
+                <Image width={40} height={40} alt={""} src="https://picsum.photos/500/500" className='w-10  h-full bg-blue-700 flex rounded-full items-center justify-center text-white cursor-pointer' />
+                <div className='flex flex-col ml-2 h-full items-start'>
+                  <span className='h-full flex items-center justify-center text-sm text-slate-500'>Contractor</span>
+                  <span className='h-full flex items-center justify-center text-blue-950 font-semibold'>Kolin F.</span>
+                </div>
+              </div>
+              <span className='text-4xl text-slate-300'>|</span>
+              <div className='cursor-pointer mx-3 w-1/2 h-10 flex flex-row-reverse items-center'>
+                <Image width={40} height={40} alt={""} src="https://picsum.photos/500/500" className='w-10  h-full bg-blue-700 flex rounded-full items-center justify-center text-white cursor-pointer' />
+                <div className='flex flex-col mr-2 h-full items-end'>
+                  <span className='h-full flex items-center justify-center text-sm text-slate-500'>Author</span>
+                  <span className='h-full flex items-center justify-center text-blue-950 font-semibold'>Nikolas P.</span>
+                </div>
+              </div>
+            </div>
+            <div className='w-full bg-slate-200 p-4 mt-3 rounded-lg flex flex-col'>
+              <div className='w-full flex items-center justify-between'>
+                <button className='bg-blue-700 flex items-center rounded-lg justify-between text-white px-4 py-2 roundd cursor-pointer'>
+                  <span>In Progress</span>
+                  <BiChevronDown color='white' className='ml-2' size={20} />
+                </button>
+                <span className='text-blue-950 relative text-center flex items-center h-fit'>
+                  <span className="font-extrabold -top-[18px] text-4xl mb-3 absolute">.</span>
+                  <span className='ml-4'>
+                    Normal Priority
+                  </span>
+                </span>
+              </div>
+              <span className='w-full mt-2 text-blue-900'>
+                Create page with bootstrap 12 grid, you can use figma our project
+              </span>
+              <Image src={"https://picsum.photos/600/600"} height={180} className='bg-blue-700 object-cover rounded-2xl my-3' width={400} alt={''} />
+              <button className='bg-blue-200 flex  w-fit px-4 rounded-lg cursor-pointer py-2 text-blue-700'>
+                <TiAttachment size={25} />
+                <span className='ml-2 font-bold'>Attach File</span>
+              </button>
             </div>
           </div>}
         </div>
