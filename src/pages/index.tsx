@@ -175,7 +175,7 @@ export default function Home() {
               <span className='w-full mt-2 text-blue-900'>
                 Create page with bootstrap 12 grid, you can use figma our project
               </span>
-              <Image src={"https://picsum.photos/600/600"} height={180} className='bg-blue-700 object-cover rounded-2xl my-3' width={400} alt={''} />
+              <Image src={"https://picsum.photos/600/180"} height={180} className='bg-blue-700 object-cover rounded-2xl my-3' width={400} alt={''} />
               <button className='bg-blue-200 flex  w-fit px-4 rounded-lg cursor-pointer py-2 text-blue-700'>
                 <TiAttachment size={25} />
                 <span className='ml-2 font-bold'>Attach File</span>
