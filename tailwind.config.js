@@ -44,6 +44,7 @@ export default {
     },
     colors: {
       ...colors,
+      "blue":"#0F5EF7"
     }
   },
   plugins: [],

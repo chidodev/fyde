@@ -31,7 +31,7 @@ export default function Home() {
                 {
                   navigation.map((navigation, index) => (
                     <div className={` mx-2 rounded-xl bg-slate-200 px-3 py-2 flex items-center justify-center`} key={index}>
-                      <navigation.icon size={20} className='text-blue-700 mr-3' />
+                      <navigation.icon size={20} className='text-blue mr-3' />
                       <span>{navigation.name}</span>
                     </div>
                   ))
@@ -46,10 +46,10 @@ export default function Home() {
               {
                 statistics.map((data, index) => (
                   <div key={index} className='w-4/12 p-4 mx-2 rounded-2xl relative  bg-slate-100 flex flex-col items-start'>
-                    <span className={`bg-${data.labelColor} rounded-lg p-1 h-6 w-6 flex items-center justify-center leading-[2px] text-white absolute right-1 top-1`}>{data.label}</span>
+                    <span style={{ background: data.labelColor }} className={`rounded-lg p-1 h-6 w-6 flex items-center justify-center leading-[2px] text-white absolute right-2 top-2`}>{data.label}</span>
                     <span className='text-slate-500'>{data.name}</span>
                     <span className='flex my-3 justify-end items-end'>
-                      <span className='text-2xl text-slate-900'>{data.value}</span>
+                      <span className='text-2xl text-slate-900 mr-2'>{data.value}</span>
                       <span className='text-slate-600 text-sm'>({data.value})</span>
                     </span>
                   </div>
@@ -60,13 +60,13 @@ export default function Home() {
               <div className='w-full my-2 flex items-center justify-between'>
                 <div className='flex items-center'>
                   <span className='text-2xl font-light'>Tasks List</span>
-                  <span className='cursor-pointer mx-6 bg-blue-700 rounded-full p-3 text-white'>
+                  <span className='cursor-pointer mx-6 bg-blue rounded-full p-3 text-white'>
                     <BiPlus size={25} />
                   </span>
                   <div className='mx-4'>
                     <AvatarGroup max={4}>
                       {
-                        users.map((user, index) => (
+                        users.slice(0, 4).map((user, index) => (
                           <Avatar key={index} alt={user.names} src={user.profile} />
                         ))
                       }
@@ -99,7 +99,7 @@ export default function Home() {
                     time: "01: 23"
                   }} />
                 </div>
-                <span className='text-slate-500 text-center mt-6 text-sm'>&copy; Ottundo, 2020 Do you <Link href="#" className='text-blue-700'>need help?</Link></span>
+                <span className='text-slate-500 text-center mt-6 text-sm'>&copy; Ottundo, 2020 Do you <Link href="#" className='text-blue'>need help?</Link></span>
               </div>
             </div>
           </div>
@@ -113,70 +113,70 @@ export default function Home() {
             </div>
             <div className='w-full p-3 bg-slate-200 items-center rounded-xl flex flex-col'>
               <div className='w-full flex'>
-                <div className='bg-orange-400 text-white p-2 text-xs rounded-2xl'>
+                <div className='bg-[#FF9F01] text-white p-2 text-xs rounded-2xl'>
                   TIMER IS ON
                 </div>
               </div>
               <span className='text-center text-slate-600'>Task: #78</span>
-              <span className='font-bold my-3 text-blue-900'>Create project with all tabs</span>
+              <span className='font-bold my-3 text-[#001847]'>Create project with all tabs</span>
               <span className='font-light text-xl'>01:34</span>
               <div className='flex border p-2 border-slate-500 rounded-3xl items-center'>
                 <div className='cursor-pointer border rounded-xl mx-3 h-8 flex items-center'>
-                  <span className='w-8  h-full bg-blue-700 flex rounded-full items-center justify-center text-white cursor-pointer'>
+                  <span className='w-8  h-full bg-blue flex rounded-full items-center justify-center text-white cursor-pointer'>
                     <BiPause size={30} color='white' />
                   </span>
-                  <span className='ml-2 h-full flex items-center justify-center rounded-lg text-blue-700'>Pause</span>
+                  <span className='ml-2 h-full flex items-center justify-center rounded-lg text-blue'>Pause</span>
                 </div>
                 <span className='text-2xl text-slate-600'>|</span>
                 <div className='cursor-pointer mx-3 h-8 flex flex-row-reverse items-center'>
-                  <span className='w-8  h-full bg-green-600 flex rounded-full items-center justify-center text-white cursor-pointer'>
+                  <span className='w-8  h-full bg-[#19C093] flex rounded-full items-center justify-center text-white cursor-pointer'>
                     <BiCheck size={30} color='white' />
                   </span>
-                  <span className='mr-2 h-full flex items-center justify-center rounded-lg text-green-700'>Complete</span>
+                  <span className='mr-2 h-full flex items-center justify-center rounded-lg text-[#19C093]'>Complete</span>
                 </div>
               </div>
             </div>
             <div className='w-full flex items-center my-4 border-b justify-between'>
-              <span className="font-bold text-lg text-blue-950">Task Description</span>
-              <span className={`bg-blue-100 z-[1] rounded-xl p-[6px] cursor-pointer `}>
+              <span className="font-bold text-lg text-[#001847]">Task Description</span>
+              <span className={`bg-[#E3EAFA] z-[1] rounded-xl p-[6px] cursor-pointer `}>
                 <BiDotsHorizontalRounded size={25} />
               </span>
             </div>
-            <div className='flex p-2 w-full  justify-betweenrounded-3xl items-center'>
-              <div className='cursor-pointer rounded-xl mx-3 w-1/2 h-10 flex items-center'>
-                <Image width={40} height={40} alt={""} src="https://picsum.photos/500/500" className='w-10  h-full bg-blue-700 flex rounded-full items-center justify-center text-white cursor-pointer' />
+            <div className='flex py-2 w-full  justify-between rounded-3xl items-center'>
+              <div className='cursor-pointer rounded-xl mr-3 w-1/2 h-10 flex items-center'>
+                <Image width={40} height={40} alt={""} src="https://picsum.photos/500/500" className='w-10  h-full bg-blue flex rounded-full items-center justify-center text-white cursor-pointer' />
                 <div className='flex flex-col ml-2 h-full items-start'>
                   <span className='h-full flex items-center justify-center text-sm text-slate-500'>Contractor</span>
-                  <span className='h-full flex items-center justify-center text-blue-950 font-semibold'>Kolin F.</span>
+                  <span className='h-full flex items-center justify-center text-[#001847] font-semibold'>Kolin F.</span>
                 </div>
               </div>
               <span className='text-4xl text-slate-300'>|</span>
-              <div className='cursor-pointer mx-3 w-1/2 h-10 flex flex-row-reverse items-center'>
-                <Image width={40} height={40} alt={""} src="https://picsum.photos/500/500" className='w-10  h-full bg-blue-700 flex rounded-full items-center justify-center text-white cursor-pointer' />
+              <div className='cursor-pointer ml-3 w-1/2 h-10 flex flex-row-reverse items-center'>
+                <Image width={40} height={40} alt={""} src="https://picsum.photos/500/500" className='w-10  h-full bg-blue flex rounded-full items-center justify-center text-white cursor-pointer' />
                 <div className='flex flex-col mr-2 h-full items-end'>
                   <span className='h-full flex items-center justify-center text-sm text-slate-500'>Author</span>
-                  <span className='h-full flex items-center justify-center text-blue-950 font-semibold'>Nikolas P.</span>
+                  <span className='h-full flex items-center justify-center text-[#001847] font-semibold'>Nikolas P.</span>
                 </div>
               </div>
             </div>
             <div className='w-full bg-slate-200 p-4 mt-3 rounded-lg flex flex-col'>
               <div className='w-full flex items-center justify-between'>
-                <button className='bg-blue-700 flex items-center rounded-lg justify-between text-white px-4 py-2 roundd cursor-pointer'>
+                <button className='bg-blue flex items-center rounded-lg justify-between text-white px-4 py-2 roundd cursor-pointer'>
                   <span>In Progress</span>
                   <BiChevronDown color='white' className='ml-2' size={20} />
                 </button>
-                <span className='text-blue-950 relative text-center flex items-center h-fit'>
+                <span className='text-[#001847] relative text-center flex items-center h-fit'>
                   <span className="font-extrabold -top-[18px] text-4xl mb-3 absolute">.</span>
                   <span className='ml-4'>
                     Normal Priority
                   </span>
                 </span>
               </div>
-              <span className='w-full mt-2 text-blue-900'>
+              <span className='w-full mt-2 text-[#001847]'>
                 Create page with bootstrap 12 grid, you can use figma our project
               </span>
-              <Image src={"https://picsum.photos/600/180"} height={180} className='bg-blue-700 object-cover rounded-2xl my-3' width={400} alt={''} />
-              <button className='bg-blue-200 flex  w-fit px-4 rounded-lg cursor-pointer py-2 text-blue-700'>
+              <Image src={"https://picsum.photos/600/270"} height={270} className='bg-blue object-cover rounded-2xl my-3' width={400} alt={''} />
+              <button className='bg-[#E3EAFA] flex w-fit px-4 rounded-lg cursor-pointer py-2 text-blue'>
                 <TiAttachment size={25} />
                 <span className='ml-2 font-bold'>Attach File</span>
               </button>

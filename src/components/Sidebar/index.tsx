@@ -14,15 +14,23 @@ const Sidebar = () => {
         <Image alt='Logo' src={"/logo.png"} className='m-auto' width={60} height={60} />
       </div>
       <div className='flex w-full items-center flex-col'>
+
         {
           navbarLinks.map((link: INavbarLink, index: number) => (
             <Link title={link.name} key={index} href={link.href} className='w-full'>
-              <div onClick={() => setActiveTab(link.label)} className={`${activeTab === link.label && "bg-blue-100"} w-full flex justify-center items-center py-6`}>
+              <div className='w-full bg-[#F1F6FF]'>
+                <div style={{ borderBottomRightRadius: activeTab === link.label ? "2rem" : "0" }} className='h-2 bg-white w-full'></div>
+              </div>
+              <div onClick={() => setActiveTab(link.label)} className={`${activeTab === link.label && "bg-[#F1F6FF]"} w-full flex py-6 justify-center items-center`}>
                 <link.icon size={25} className='text-slate-700' />
+              </div>
+              <div className='w-full bg-[#F1F6FF]'>
+                <div style={{ borderTopRightRadius: activeTab === link.label ? "2rem" : "0" }} className='h-2 bg-white w-full'></div>
               </div>
             </Link>
           ))
         }
+
       </div>
       <div></div>
     </div>

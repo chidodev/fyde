@@ -60,11 +60,11 @@ const MiddleBar = () => {
     };
 
   return (
-    <div className='bg-blue-100 min-h-screen w-1/5  flex flex-col'>
+    <div className='bg-[#F1F6FF] min-h-screen w-1/5  flex flex-col'>
       <div className='w-full px-4 flex items-center pt-5 justify-between shadow shadow-slate-300 pb-4'>
         <div></div>
         <span className='font-bold text-2xl text-center'>Project CRM</span>
-        <div className='w-10 h-10 cursor-pointer rounded-full flex items-center justify-center bg-blue-700'>
+        <div className='w-10 h-10 cursor-pointer rounded-full flex items-center justify-center bg-blue'>
           <BiPlus size={28} color='white' className='' />
         </div>
       </div>
@@ -92,7 +92,7 @@ const MiddleBar = () => {
             ))
           }
         </div>
-        <button className='w-8/12 p-4 rounded bg-blue-700 text-white items-center text-center flex'>
+        <button className='w-8/12 p-4 rounded bg-blue text-white items-center text-center flex'>
           <BiPlus size={25} />
           <span>Create New Project</span>
         </button>

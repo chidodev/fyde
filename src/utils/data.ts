@@ -138,19 +138,19 @@ export const statistics = [
     {
         name: "Yours & total time",
         label: "h",
-        labelColor: "yellow-600",
+        labelColor: "#FFA41B",
         value: "03:09",
         subValue: "05:21"
     }, {
         name: "Yours & total earnings",
         label: "$",
-        labelColor: "green-600",
+        labelColor: "#03BC8C",
         value: "1,695.00",
         subValue: "4,695.00"
     }, {
         name: "Project Progress",
         label: "%",
-        labelColor: "blue-700",
+        labelColor: "#0F5EF7",
         value: "34%",
         subValue: "34/100"
     },
