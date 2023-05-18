@@ -6,6 +6,7 @@ import { BiChat, BiTask, BiToggleLeft } from 'react-icons/bi'
 import { FaRegUser } from 'react-icons/fa'
 import { BsBatteryFull, BsBatteryHalf } from 'react-icons/bs'
 import { IoMdCheckmarkCircleOutline } from 'react-icons/io'
+import { TbDevices } from "react-icons/tb";
 
 export const navbarLinks: INavbarLink[] = [
     {
@@ -18,7 +19,7 @@ export const navbarLinks: INavbarLink[] = [
     {
         href: "/",
         name: "Task",
-        icon: FcSmartphoneTablet,
+        icon: TbDevices,
         label: "tasks"
 
     },

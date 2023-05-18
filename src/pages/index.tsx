@@ -25,28 +25,28 @@ export default function Home() {
         </Head>
         <Navbar />
         <div className='w-full flex justify-around'>
-          <div className={`${rightBar ? "w-4/6" : "w-11/12"} min-h-[calc(100vh_-_15vh)] mt-2 flex flex-col`}>
+          <div className={`${rightBar ? "w-full plg:w-4/6" : "w-full plg:w-11/12"} min-h-[calc(100vh_-_15vh)] mt-2 flex flex-col`}>
             <div className='flex items-center justify-between py-6 border-b border-slate-400'>
               <div className='w-fit flex items-center'>
                 {
                   navigation.map((navigation, index) => (
-                    <div className={` mx-2 rounded-xl bg-slate-200 px-3 py-2 flex items-center justify-center`} key={index}>
-                      <navigation.icon size={20} className='text-blue mr-3' />
-                      <span>{navigation.name}</span>
+                    <div className={` mx-2 rounded-full smm20:rounded-xl bg-slate-200 p-4 smm20:p-0 smm20:px-3 smm20:py-2 flex items-center justify-center`} key={index}>
+                      <navigation.icon size={20} className='text-blue smm20:mr-3' />
+                      <span className='smm20:flex hidden'>{navigation.name}</span>
                     </div>
                   ))
                 }
               </div>
-              {!rightBar && <button onClick={() => setRightBar(true)} className='text-blue-600 border-2 rounded-3xl cursor-pointer p-2 flex'>
+              {!rightBar && <button onClick={() => setRightBar(true)} className='text-blue-600 border-2 rounded-3xl cursor-pointer p-2 hidden lg:flex'>
                 <span>Show Window</span>
                 <BiChevronRight size={20} />
               </button>}
             </div>
-            <div className='flex w-full justify-between items-center py-4'>
+            <div className='flex w-full md:flex-row flex-col justify-between items-center py-4'>
               {
                 statistics.map((data, index) => (
-                  <div key={index} className='w-4/12 p-4 mx-2 rounded-2xl relative  bg-slate-100 flex flex-col items-start'>
-                    <span style={{ background: data.labelColor }} className={`rounded-lg p-1 h-6 w-6 flex items-center justify-center leading-[2px] text-white absolute right-2 top-2`}>{data.label}</span>
+                  <div key={index} className='w-full md:my-0 my-2 md:w-4/12 p-4 mx-2 rounded-2xl relative  bg-slate-100 flex  flex-col items-start'>
+                    <span style={{ background: data.labelColor }} className={`flex md:hidden lg:flex rounded-lg p-1 h-6 w-6 items-center justify-center leading-[2px] text-white absolute right-2 top-2`}>{data.label}</span>
                     <span className='text-slate-500'>{data.name}</span>
                     <span className='flex my-3 justify-end items-end'>
                       <span className='text-2xl text-slate-900 mr-2'>{data.value}</span>
@@ -58,12 +58,12 @@ export default function Home() {
             </div>
             <div className='flex w-full flex-col'>
               <div className='w-full my-2 flex items-center justify-between'>
-                <div className='flex items-center'>
+                <div className='flex items-center sm:justify-start justify-between'>
                   <span className='text-2xl font-light'>Tasks List</span>
                   <span className='cursor-pointer mx-6 bg-blue rounded-full p-3 text-white'>
                     <BiPlus size={25} />
                   </span>
-                  <div className='mx-4'>
+                  <div className='mx-4 hidden md:flex'>
                     <AvatarGroup max={4}>
                       {
                         users.slice(0, 4).map((user, index) => (
@@ -72,7 +72,7 @@ export default function Home() {
                       }
                     </AvatarGroup>
                   </div>
-                  <span className='text-slate-500 mx-4'>200 elements</span>
+                  <span className=' hidden sm:flex text-slate-500 mx-4'>200 elements</span>
                 </div>
                 <div className='flex border-l border-slate-400 pl-4 items-center'>
                   <div className='flex mx-2 items-center '>
@@ -103,12 +103,12 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {rightBar && <div className='w-2/5 p-4 min-h-[calc(100vh_-_15vh)] mt-3 flex flex-col'>
+          {rightBar && <div className='w-2/5 p-4 min-h-[calc(100vh_-_15vh)] mt-3 hidden lg:flex flex-col'>
             <div className='w-full flex my-2 justify-between items-center'>
               <span className='font-bold text-xl'>Time Tracking</span>
               <button onClick={() => setRightBar(false)} className='text-blue-600 border-2 rounded-3xl cursor-pointer p-2 flex'>
                 <span>Hide Window</span>
-                <BiChevronRight size={20} />
+                <BiChevronRight className='' size={20} />
               </button>
             </div>
             <div className='w-full py-2 px-3 bg-slate-200 items-center rounded-xl flex flex-col'>
@@ -167,7 +167,7 @@ export default function Home() {
                 </button>
                 <span className='text-[#001847] relative text-center flex items-center h-fit'>
                   <span className="font-extrabold -top-[18px] text-4xl mb-3 absolute">.</span>
-                  <span className='ml-4'>
+                  <span className='ml-4 plg:flex hidden'>
                     Normal Priority
                   </span>
                 </span>

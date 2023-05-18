@@ -10,13 +10,13 @@ const Navbar = () => {
         <input type="text" className='outline-none text-black' placeholder='Search in CRM...' />
       </div>
       <div className='flex items-center'>
-        <div className='cursor-pointer mx-3 h-12 flex items-center'>
+        <div className='cursor-pointer mx-3 h-12 hidden smlg:flex items-center'>
           <span className='w-12  h-full bg-blue flex rounded-full items-center justify-center text-white cursor-pointer'>
             <BiPause size={30} color='white' />
           </span>
           <span className='ml-2 h-full flex items-center justify-center rounded-lg text-2xl px-4 bg-slate-200 text-black'>4: 26</span>
         </div>
-        <div className='cursor-pointer mx-3 h-12 flex items-center'>
+        <div className='cursor-pointer mx-3 h-12 hidden smlg:flex items-center'>
           <span className='w-12  h-full bg-[#19C093] flex rounded-full items-center justify-center text-white cursor-pointer'>
             <BiCheck size={30} color='white' />
           </span>

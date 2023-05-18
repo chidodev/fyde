@@ -9,6 +9,7 @@ import MuiAccordionSummary, {
 import { styled } from '@mui/material/styles';
 import { useState } from 'react';
 import { BiPlus } from 'react-icons/bi';
+import { TbDevices } from 'react-icons/tb'
 
 const Accordion = styled((props: AccordionProps) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -60,7 +61,7 @@ const MiddleBar = () => {
     };
 
   return (
-    <div className='bg-[#F1F6FF] min-h-screen w-1/5  flex flex-col'>
+    <div className='bg-[#F1F6FF] min-h-screen w-1/5  hidden xl:flex flex-col'>
       <div className='w-full px-4 flex items-center pt-5 justify-between shadow shadow-slate-300 pb-4'>
         <div></div>
         <span className='font-bold text-2xl text-center'>Project CRM</span>
@@ -69,7 +70,7 @@ const MiddleBar = () => {
         </div>
       </div>
       <div className="w-full min-h-[calc(100vh_-_10vh)] flex-col flex justify-between items-center">
-        <div className='w-full px-6 flex flex-col'>
+        <div className='w-full 2xl:px-6 flex flex-col'>
           {
             items.map((item, index) => (
               <Accordion key={index} className='my-2 border-b border-slate-300' expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
@@ -93,8 +94,9 @@ const MiddleBar = () => {
           }
         </div>
         <button className='w-8/12 p-4 rounded bg-blue text-white items-center text-center flex'>
-          <BiPlus size={25} />
-          <span>Create New Project</span>
+          <BiPlus size={20} />
+          <span className='mx-1'>Create New Project</span>
+          <TbDevices size={20} className={"text-slate-100"} />
         </button>
       </div>
     </div>

@@ -9,7 +9,7 @@ const Sidebar = () => {
   const [activeTab, setActiveTab] = useState<"home" | "tasks" | "user" | "chat" | "help">("home")
 
   return (
-    <div className='w-20 items-center bg-white flex flex-col py-3 justify-between shadow min-h-screen'>
+    <div className='w-20 items-center bg-white hidden md:flex flex-col py-3 justify-between shadow min-h-screen'>
       <div className='border-b-2 w-full'>
         <Image alt='Logo' src={"/logo.png"} className='m-auto' width={60} height={60} />
       </div>
