@@ -104,14 +104,14 @@ export default function Home() {
             </div>
           </div>
           {rightBar && <div className='w-2/5 p-4 min-h-[calc(100vh_-_15vh)] mt-3 flex flex-col'>
-            <div className='w-full flex my-4 justify-between items-center'>
+            <div className='w-full flex my-2 justify-between items-center'>
               <span className='font-bold text-xl'>Time Tracking</span>
               <button onClick={() => setRightBar(false)} className='text-blue-600 border-2 rounded-3xl cursor-pointer p-2 flex'>
                 <span>Hide Window</span>
                 <BiChevronRight size={20} />
               </button>
             </div>
-            <div className='w-full p-3 bg-slate-200 items-center rounded-xl flex flex-col'>
+            <div className='w-full py-2 px-3 bg-slate-200 items-center rounded-xl flex flex-col'>
               <div className='w-full flex'>
                 <div className='bg-[#FF9F01] text-white p-2 text-xs rounded-2xl'>
                   TIMER IS ON
@@ -136,7 +136,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className='w-full flex items-center my-4 border-b justify-between'>
+            <div className='w-full flex items-center my-2 border-b justify-between'>
               <span className="font-bold text-lg text-[#001847]">Task Description</span>
               <span className={`bg-[#E3EAFA] z-[1] rounded-xl p-[6px] cursor-pointer `}>
                 <BiDotsHorizontalRounded size={25} />
@@ -159,7 +159,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className='w-full bg-slate-200 p-4 mt-3 rounded-lg flex flex-col'>
+            <div className='w-full bg-slate-200 p-4 mt-2 rounded-lg flex flex-col'>
               <div className='w-full flex items-center justify-between'>
                 <button className='bg-blue flex items-center rounded-lg justify-between text-white px-4 py-2 roundd cursor-pointer'>
                   <span>In Progress</span>
@@ -179,6 +179,15 @@ export default function Home() {
               <button className='bg-[#E3EAFA] flex w-fit px-4 rounded-lg cursor-pointer py-2 text-blue'>
                 <TiAttachment size={25} />
                 <span className='ml-2 font-bold'>Attach File</span>
+              </button>
+            </div>
+            <div className='w-full mt-2 flex justify-between'>
+              <div className='flex flex-col text-xs text-slate-400'>
+                <span>Created: 23 July 2020 at 8:23 pm</span>
+                <span>Updated: 24 July 2020 at 6:12 pm</span>
+              </div>
+              <button className='text-blue-600 border-2 border-red-500 text-red-600 rounded-3xl cursor-pointer p-2 flex'>
+                <span>Delete Task</span>
               </button>
             </div>
           </div>}
