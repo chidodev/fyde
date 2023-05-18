@@ -6,9 +6,10 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
   transition: all 0.2s ease-in-out;
   font-family: "Open Sans";
+  z-index: 1 !important;
 }
 
 .task-shadow {
@@ -16,7 +17,6 @@
   -moz-box-shadow: 6px 13px 300px -48px rgba(0, 0, 0, 0.74);
   box-shadow: 6px 13px 300px -48px rgba(0, 0, 0, 0.74);
 }
-
 
 ::-webkit-scrollbar {
   width: 6px;
@@ -31,11 +31,17 @@
   background: transparent;
 }
 
-.css-xzqo2p-MuiButtonBase-root-MuiAccordionSummary-root{
+.css-xzqo2p-MuiButtonBase-root-MuiAccordionSummary-root {
   padding: 0px;
 }
 
-.css-xzqo2p-MuiButtonBase-root-MuiAccordionSummary-root .MuiAccordionSummary-content{
+.css-xzqo2p-MuiButtonBase-root-MuiAccordionSummary-root
+  .MuiAccordionSummary-content {
   padding: 0;
   margin: 0;
+}
+
+.css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+  background-color: transparent;
+  box-shadow: none;
 }

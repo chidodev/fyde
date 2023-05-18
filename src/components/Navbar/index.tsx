@@ -1,10 +1,14 @@
+import { useApp } from '@/context/AppContext'
 import Image from 'next/image'
 import React from 'react'
-import { BiCheck, BiChevronDown, BiPause, BiSearch } from 'react-icons/bi'
+import { BiCheck, BiChevronDown, BiChevronLeft, BiPause, BiSearch } from 'react-icons/bi'
 
 const Navbar = () => {
+  const { middleBar, setMiddleBar } = useApp()
+
   return (
     <div className='w-full flex justify-between items-center'>
+      {!middleBar && <BiChevronLeft onClick={() => setMiddleBar(!middleBar)} color='blue' size={25} className={`${!middleBar && "rotate-180"} cursor-pointer w-8 h-8 rounded-full hidden xl:flex items-center justify-center bg-[#E3EAFA]`} />}
       <div className='flex text-slate-400 items-center'>
         <BiSearch size={25} className='mr-2' />
         <input type="text" className='outline-none text-black' placeholder='Search in CRM...' />

@@ -16,7 +16,7 @@ import { TiAttachment } from 'react-icons/ti'
 export default function Home() {
 
   const [activeDisplayTab, setActiveDisplayTab] = useState("flex")
-  const { rightBar, setRightBar } = useApp()
+  const { rightBar, setRightBar, middleBar } = useApp()
   return (
     <CommonComponent>
       <main className="flex w-full flex-col px-4 pr-0 p-2 min-h-screen">
@@ -138,7 +138,7 @@ export default function Home() {
             </div>
             <div className='w-full flex items-center py-4 border-b justify-between'>
               <span className="font-bold text-lg text-[#001847]">Task Description</span>
-              <span className={`bg-[#E3EAFA] z-[1] rounded-xl p-[4px] cursor-pointer `}>
+              <span className={`bg-[#E3EAFA]  rounded-xl p-[4px] cursor-pointer `}>
                 <BiDotsHorizontalRounded size={25} />
               </span>
             </div>

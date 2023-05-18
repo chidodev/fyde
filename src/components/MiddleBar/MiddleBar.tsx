@@ -1,3 +1,4 @@
+import { useApp } from '@/context/AppContext';
 import { items } from '@/utils/data';
 import ArrowForwardIosSharpIcon from '@mui/icons-material/ArrowForwardIosSharp';
 import { Box, Typography } from '@mui/material';
@@ -8,7 +9,7 @@ import MuiAccordionSummary, {
 } from '@mui/material/AccordionSummary';
 import { styled } from '@mui/material/styles';
 import { useState } from 'react';
-import { BiPlus } from 'react-icons/bi';
+import { BiChevronLeft, BiPlus } from 'react-icons/bi';
 import { TbDevices } from 'react-icons/tb'
 
 const Accordion = styled((props: AccordionProps) => (
@@ -53,6 +54,7 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 const MiddleBar = () => {
   const [expanded, setExpanded] = useState<string | boolean>('panel1');
+  const { middleBar, setMiddleBar } = useApp()
   const [activeSubItem, setActiveSubItem] = useState<string>("")
   const handleChange =
     (panel: string) => (event: React.SyntheticEvent, newExpanded: boolean) => {
@@ -63,7 +65,7 @@ const MiddleBar = () => {
   return (
     <div className='bg-[#F1F6FF] min-h-screen w-1/5  hidden xl:flex flex-col'>
       <div className='w-full px-4 flex items-center pt-5 justify-between shadow shadow-slate-300 pb-4'>
-        <div></div>
+        <BiChevronLeft onClick={() => setMiddleBar(!middleBar)} color='blue' size={25} className={`${!middleBar && "rotate-180"} cursor-pointer w-8 h-8 rounded-full hidden xl:flex items-center justify-center bg-[#E3EAFA]`} />
         <span className='font-bold text-2xl text-center'>Project CRM</span>
         <div className='w-10 h-10 cursor-pointer rounded-full flex items-center justify-center bg-blue'>
           <BiPlus size={28} color='white' className='' />
@@ -93,7 +95,7 @@ const MiddleBar = () => {
             ))
           }
         </div>
-        <button className='w-10/12 p-4 rounded bg-blue text-white items-center text-center flex'>
+        <button className='w-10/12 p-4 rounded bg-blue text-white items-center justify-around text-center flex'>
           <BiPlus size={20} />
           <span className='mx-1'>Create New Project</span>
           <TbDevices size={20} className={"text-slate-100"} />

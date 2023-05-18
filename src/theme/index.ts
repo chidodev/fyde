@@ -9,13 +9,13 @@ const THEME = createTheme({
         "fontWeightMedium": 500
     },
     zIndex: {
-        mobileStepper: 2,
-        speedDial: 2,
-        appBar: 3,
-        drawer: 4,
-        modal: 5,
-        snackbar: 6,
-        tooltip: 7
+        mobileStepper: 1,
+        speedDial: 1,
+        appBar: 1,
+        drawer: 1,
+        modal: 1,
+        snackbar: 1,
+        tooltip: 1
     }
 });
 

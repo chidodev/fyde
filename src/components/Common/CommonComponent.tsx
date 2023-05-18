@@ -5,11 +5,10 @@ import { BiChevronLeft } from 'react-icons/bi'
 import { useApp } from '@/context/AppContext'
 
 const CommonComponent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-    const { middleBar, setMiddleBar } = useApp()
+    const { middleBar } = useApp()
 
     return (
         <div className='min-h-screen bg-white w-full flex items-center justify-start'>
-            <BiChevronLeft onClick={() => setMiddleBar(!middleBar)} color='blue' size={25} className={`${!middleBar && "rotate-180"} absolute top-4 left-24 cursor-pointer w-8 h-8 rounded-full hidden xl:flex items-center justify-center bg-[#E3EAFA]`} />
             <Sidebar />
             {middleBar && <MiddleBar />}
             <div className={`shadow shadow-slate-400 ${middleBar ? "w-full xl:w-9/12" : "w-full px-3"} min-h-screen`}>
