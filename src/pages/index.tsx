@@ -145,15 +145,15 @@ export default function Home() {
             <div className='flex py-2 w-full  justify-between rounded-3xl items-center'>
               <div className='cursor-pointer rounded-xl mr-3 w-1/2 h-10 flex items-center'>
                 <Image width={40} height={40} alt={""} src="https://picsum.photos/500/500" className='w-10  h-full bg-blue flex rounded-full items-center justify-center text-white cursor-pointer' />
-                <div className='flex flex-col ml-2 h-full items-start'>
+                <div className='flex flex-col ml-1 h-full items-start'>
                   <span className='h-full flex items-center justify-center text-sm text-slate-500'>Contractor</span>
                   <span className='h-full flex items-center justify-center text-[#001847] font-semibold'>Kolin F.</span>
                 </div>
               </div>
-              <span className='text-4xl text-slate-300'>|</span>
-              <div className='cursor-pointer ml-3 w-1/2 h-10 flex flex-row-reverse items-center'>
+              <span className='lg:hidden flex xl:flex text-4xl text-slate-300'>|</span>
+              <div className='cursor-pointer smxl:ml-3 w-1/2 h-10 flex flex-row-reverse items-center'>
                 <Image width={40} height={40} alt={""} src="https://picsum.photos/500/500" className='w-10  h-full bg-blue flex rounded-full items-center justify-center text-white cursor-pointer' />
-                <div className='flex flex-col mr-2 h-full items-end'>
+                <div className='flex flex-col ml-1 h-full items-end'>
                   <span className='h-full flex items-center justify-center text-sm text-slate-500'>Author</span>
                   <span className='h-full flex items-center justify-center text-[#001847] font-semibold'>Nikolas P.</span>
                 </div>
@@ -165,9 +165,9 @@ export default function Home() {
                   <span>In Progress</span>
                   <BiChevronDown color='white' className='ml-2' size={20} />
                 </button>
-                <span className='text-[#001847] relative text-center flex items-center h-fit'>
+                <span className='text-[#001847] relative text-center  2xl:flex hidden items-center h-fit'>
                   <span className="font-extrabold -top-[18px] text-4xl mb-3 absolute">.</span>
-                  <span className='ml-4 plg:flex hidden'>
+                  <span className='ml-4 2xl:flex hidden'>
                     Normal Priority
                   </span>
                 </span>
@@ -175,18 +175,18 @@ export default function Home() {
               <span className='w-full mt-2 text-[#001847]'>
                 Create page with bootstrap 12 grid, you can use figma our project
               </span>
-              <Image src={"https://picsum.photos/600/270"} height={270} className='bg-blue object-cover rounded-2xl my-3' width={400} alt={''} />
+              <Image src={"https://picsum.photos/600/270"} height={270} className='bg-blue object-cover rounded-2xl my-3 w-full' width={400} alt={''} />
               <button className='bg-[#bac7e3] flex w-fit px-4 rounded-lg cursor-pointer py-1 text-blue'>
                 <TiAttachment size={25} />
                 <span className='ml-1 font-bold'>Attach File</span>
               </button>
             </div>
             <div className='w-full mt-8 flex justify-between'>
-              <div className='flex flex-col text-xs text-slate-400'>
+              <div className='plg:flex hidden smxl:flex flex-col text-xs text-slate-400'>
                 <span>Created: 23 July 2020 at 8:23 pm</span>
                 <span>Updated: 24 July 2020 at 6:12 pm</span>
               </div>
-              <button className='text-blue-600 border-2 border-red-500 text-red-600 rounded-3xl cursor-pointer px-2 py-1 flex'>
+              <button className='text-blue-600 border-2 border-red-500 text-red-600 rounded-3xl cursor-pointer px-2 py-1 flex text-sm smxl:text-base'>
                 <span>Delete Task</span>
               </button>
             </div>

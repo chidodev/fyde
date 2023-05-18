@@ -95,7 +95,7 @@ const MiddleBar = () => {
             ))
           }
         </div>
-        <button className='w-10/12 p-4 rounded bg-blue text-white items-center justify-around text-center flex'>
+        <button className='w-11/12 2xl:w-10/12 p-4 rounded bg-blue text-white items-center justify-around text-center flex'>
           <BiPlus size={20} />
           <span className='mx-1'>Create New Project</span>
           <TbDevices size={20} className={"text-slate-100"} />

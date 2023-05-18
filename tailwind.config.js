@@ -19,8 +19,9 @@ export default {
       'smlg': '880px',
       'lg': '1024px',
       'plg': '1135px',
-      'mxl': '1335px',
       'xl': '1280px',
+      'mxl': '1335px',
+      'smxl': '1400px',
       '2xl': '1536px',
     },
     extend: {

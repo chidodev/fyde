@@ -65,7 +65,7 @@ const Task: React.FC<{ task: ITask }> = ({ task }) => {
                                     vertical: 'bottom',
                                     horizontal: 'left',
                                 }}
-                                className='bg-transparent shadow-0'
+                                className=''
                             >
                                 <div className='flex flex-col bg-transparent '>
                                     <div className='flex justify-start bg-transparent'>
@@ -74,7 +74,7 @@ const Task: React.FC<{ task: ITask }> = ({ task }) => {
                                     <div className='flex flex-col  rounded-lg bg-[#001847] text-white py-4'>
                                         {
                                             ["Open", "Get Link", "Clone", "Delete"].map((item, index) => (
-                                                <div key={index} className={`py-2 px-8 border-blue ${index != 3 && "border-b"} `}>
+                                                <div key={index} className={`cursor-pointer py-2 px-8 border-blue ${index != 3 && "border-b"} `}>
                                                     {item}
                                                 </div>
                                             ))

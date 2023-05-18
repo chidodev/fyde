@@ -8,10 +8,10 @@ const CommonComponent: React.FC<{ children: React.ReactNode }> = ({ children }) 
     const { middleBar } = useApp()
 
     return (
-        <div className='min-h-screen bg-white w-full flex items-center justify-start'>
+        <div className='min-h-screen bg-white w-full flex items-start justify-start'>
             <Sidebar />
             {middleBar && <MiddleBar />}
-            <div className={`shadow shadow-slate-400 ${middleBar ? "w-full xl:w-9/12" : "w-full px-3"} min-h-screen`}>
+            <div className={`shadow shadow-slate-400 ${middleBar ? "w-full xl:w-9/12" : "w-full px-3"} h-screen overflow-y-scroll`}>
                 {children}
             </div>
         </div>
