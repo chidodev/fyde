@@ -31,17 +31,13 @@
   background: transparent;
 }
 
-.css-xzqo2p-MuiButtonBase-root-MuiAccordionSummary-root {
-  padding: 0px;
-}
-
-.css-xzqo2p-MuiButtonBase-root-MuiAccordionSummary-root
-  .MuiAccordionSummary-content {
+#panel1d-header > div.MuiAccordionSummary-content.css-1betqn-MuiAccordionSummary-content{
   padding: 0;
   margin: 0;
 }
 
-.css-3bmhjh-MuiPaper-root-MuiPopover-paper {
+#simple-popover
+  > div.MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation8.MuiPopover-paper.css-3bmhjh-MuiPaper-root-MuiPopover-paper {
   background-color: transparent;
   box-shadow: none;
 }

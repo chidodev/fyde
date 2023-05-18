@@ -75,9 +75,9 @@ const MiddleBar = () => {
         <div className='w-full 2xl:px-4 flex flex-col'>
           {
             items.map((item, index) => (
-              <Accordion key={index} className='my-2 border-b p-0 border-slate-300' expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
-                <AccordionSummary aria-controls={`panel${index}d-content`} id="panel1d-header">
-                  <Box className={`flex items-center`}>
+              <Accordion key={index} className='my-2 border-b border-slate-300' expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
+                <AccordionSummary aria-controls={`panel${index}d-content`} id="panel1d-header" className="panel mx-0 px-0">
+                  <Box className={`flex items-center p-0`}>
                     {item.icon && <item.icon color='grey' className={`mr-2 `} size={25} />}
                     <Typography className={`font-bold ${expanded === ("panel" + index) ? "text-black" : "text-slate-700"} `}>{item.heading}</Typography>
                   </Box>
