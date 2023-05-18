@@ -39,7 +39,7 @@ const Task: React.FC<{ task: ITask }> = ({ task }) => {
                     <BiDotsHorizontalRounded size={25} />
                     {showContextMenu &&
                         (
-                            <div className='flex flex-col absolute right-1 top-8'>
+                            <div className='hidden flex-col absolute right-1 top-8'>
                                 <div className='flex justify-end'>
                                     <div className='border-8 border-transparent mr-[6px] bg-transparent border-b-[#001847] w-4'></div>
                                 </div>

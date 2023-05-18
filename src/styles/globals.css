@@ -30,3 +30,12 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
+
+.css-xzqo2p-MuiButtonBase-root-MuiAccordionSummary-root{
+  padding: 0px;
+}
+
+.css-xzqo2p-MuiButtonBase-root-MuiAccordionSummary-root .MuiAccordionSummary-content{
+  padding: 0;
+  margin: 0;
+}

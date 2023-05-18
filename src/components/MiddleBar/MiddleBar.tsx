@@ -70,10 +70,10 @@ const MiddleBar = () => {
         </div>
       </div>
       <div className="w-full min-h-[calc(100vh_-_10vh)] flex-col flex justify-between items-center">
-        <div className='w-full 2xl:px-6 flex flex-col'>
+        <div className='w-full 2xl:px-4 flex flex-col'>
           {
             items.map((item, index) => (
-              <Accordion key={index} className='my-2 border-b border-slate-300' expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
+              <Accordion key={index} className='my-2 border-b p-0 border-slate-300' expanded={expanded === `panel${index}`} onChange={handleChange(`panel${index}`)}>
                 <AccordionSummary aria-controls={`panel${index}d-content`} id="panel1d-header">
                   <Box className={`flex items-center`}>
                     {item.icon && <item.icon color='grey' className={`mr-2 `} size={25} />}
@@ -93,7 +93,7 @@ const MiddleBar = () => {
             ))
           }
         </div>
-        <button className='w-8/12 p-4 rounded bg-blue text-white items-center text-center flex'>
+        <button className='w-10/12 p-4 rounded bg-blue text-white items-center text-center flex'>
           <BiPlus size={20} />
           <span className='mx-1'>Create New Project</span>
           <TbDevices size={20} className={"text-slate-100"} />

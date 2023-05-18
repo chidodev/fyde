@@ -19,13 +19,13 @@ export default function Home() {
   const { rightBar, setRightBar } = useApp()
   return (
     <CommonComponent>
-      <main className="flex w-full flex-col px-8 py-4 min-h-screen">
+      <main className="flex w-full flex-col px-4 pr-0 p-2 min-h-screen">
         <Head>
           <title>Project CRM</title>
         </Head>
         <Navbar />
         <div className='w-full flex justify-around'>
-          <div className={`${rightBar ? "w-full plg:w-4/6" : "w-full plg:w-11/12"} min-h-[calc(100vh_-_15vh)] mt-2 flex flex-col`}>
+          <div className={`${rightBar ? "w-full plg:w-[65%]" : "w-full plg:w-11/12"} min-h-[calc(100vh_-_15vh)] mt-2 px-4 flex flex-col`}>
             <div className='flex items-center justify-between py-6 border-b border-slate-400'>
               <div className='w-fit flex items-center'>
                 {
@@ -50,7 +50,7 @@ export default function Home() {
                     <span className='text-slate-500'>{data.name}</span>
                     <span className='flex my-3 justify-end items-end'>
                       <span className='text-2xl text-slate-900 mr-2'>{data.value}</span>
-                      <span className='text-slate-600 text-sm'>({data.value})</span>
+                      <span className='text-slate-600 text-sm mb-1'>({data.value})</span>
                     </span>
                   </div>
                 ))
@@ -103,7 +103,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-          {rightBar && <div className='w-2/5 p-4 min-h-[calc(100vh_-_15vh)] mt-3 hidden lg:flex flex-col'>
+          {rightBar && <div className='w-[35%] py-4 px-8 m-auto min-h-[calc(100vh_-_15vh)] mt-3 hidden lg:flex flex-col'>
             <div className='w-full flex my-2 justify-between items-center'>
               <span className='font-bold text-xl'>Time Tracking</span>
               <button onClick={() => setRightBar(false)} className='text-blue-600 border-2 rounded-3xl cursor-pointer p-2 flex'>
@@ -136,9 +136,9 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className='w-full flex items-center my-2 border-b justify-between'>
+            <div className='w-full flex items-center py-4 border-b justify-between'>
               <span className="font-bold text-lg text-[#001847]">Task Description</span>
-              <span className={`bg-[#E3EAFA] z-[1] rounded-xl p-[6px] cursor-pointer `}>
+              <span className={`bg-[#E3EAFA] z-[1] rounded-xl p-[4px] cursor-pointer `}>
                 <BiDotsHorizontalRounded size={25} />
               </span>
             </div>
@@ -176,17 +176,17 @@ export default function Home() {
                 Create page with bootstrap 12 grid, you can use figma our project
               </span>
               <Image src={"https://picsum.photos/600/270"} height={270} className='bg-blue object-cover rounded-2xl my-3' width={400} alt={''} />
-              <button className='bg-[#E3EAFA] flex w-fit px-4 rounded-lg cursor-pointer py-2 text-blue'>
+              <button className='bg-[#bac7e3] flex w-fit px-4 rounded-lg cursor-pointer py-1 text-blue'>
                 <TiAttachment size={25} />
-                <span className='ml-2 font-bold'>Attach File</span>
+                <span className='ml-1 font-bold'>Attach File</span>
               </button>
             </div>
-            <div className='w-full mt-2 flex justify-between'>
+            <div className='w-full mt-8 flex justify-between'>
               <div className='flex flex-col text-xs text-slate-400'>
                 <span>Created: 23 July 2020 at 8:23 pm</span>
                 <span>Updated: 24 July 2020 at 6:12 pm</span>
               </div>
-              <button className='text-blue-600 border-2 border-red-500 text-red-600 rounded-3xl cursor-pointer p-2 flex'>
+              <button className='text-blue-600 border-2 border-red-500 text-red-600 rounded-3xl cursor-pointer px-2 py-1 flex'>
                 <span>Delete Task</span>
               </button>
             </div>
